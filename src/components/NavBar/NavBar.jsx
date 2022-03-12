@@ -1,7 +1,7 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
-import Widget from '../Widget/Widget'
-import Search from '../Search/Search'
+import Widget from './Widget/Widget'
+import Search from './Search/Search'
 
 function NavBar() {
   return (
