@@ -16,16 +16,20 @@ const ItemCount = ({ initial, stock, onAdd }) => {
     }
 
     const agregar = () => {
-        console.log(count)
+        onAdd(count)
     }
     
 
     return (
         <div>
-            <button onClick={restar}> - </button>
-            <label> { count } </label>
-            <button onClick={sumar}> + </button><br />
-            <Button variant="primary" onClick={ agregar } >Comprar</Button>
+            {stock < 1 ? <p className='d-flex justify-content-center'><strong>Sin stock</strong></p> : 
+            <>
+                <Button variant="primary" onClick={ agregar } className='me-3'>Comprar</Button>
+                <button type="button" className='btn btn-outline-primary btn-sm' onClick={restar}> - </button> 
+                <label className='mx-1'> { count } </label>
+                <button type="button" className='btn btn-outline-primary btn-sm' onClick={sumar}> + </button>
+            </>
+            }
         </div>
     )
 }
