@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Widget from './Widget/Widget'
@@ -8,18 +9,22 @@ function NavBar() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
-            <img
-              alt=""
-              src={require('../../img/logo.png')}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-          TecnoFox
-          </Navbar.Brand>
+          <NavLink to=''>
+            <Navbar.Brand href="#home">
+              <img
+                alt=""
+                src={require('../../img/logo.png')}
+                width="30"
+                height="30"
+                className="d-inline-block align-top"
+              />{' '}
+            TecnoFox
+            </Navbar.Brand>
+          </NavLink>
           <Search />
-          <Widget />
+          <NavLink to='cart'>
+            <Widget />
+          </NavLink>
         </Container>
       </Navbar>
 </>
