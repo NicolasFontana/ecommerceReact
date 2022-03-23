@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../../components/ItemDetail/ItemDetail"
-import { getFetch, getFetchOne } from "../../helpers/getFetch"
+import { getFetchOne } from "../../helpers/getFetch"
 
 
 function ItemDetailContainer() {
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
 
-    const { detalleId } = useParams() 
-    console.log(detalleId)
+    let { detalleId } = useParams()
     useEffect(()=>{
         getFetchOne
-        .then(prod => setProducto(prod.find(item => item.id == detalleId)))
+        .then(prod => setProducto(prod.find(item => item.id === Number(detalleId))))
         // .then(prod => setProducto(prod))
         .catch(err => console.log(err))
         .finally ( () => setLoading(false))
-    }, [])
-    console.log(producto)
+    }, [detalleId])
     return (
         <div>
           <>

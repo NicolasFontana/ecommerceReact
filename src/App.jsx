@@ -17,6 +17,7 @@ function App() {
           <Route path="/" element={<ItemListContainer greeting = "e-commerce con React" />}/>
           <Route path="/categoria/:categoria" element={<ItemListContainer greeting = "e-commerce con React" />}/>
           <Route path="/detalle/:detalleId" element={<ItemDetailContainer />}/>
+          {/* <Route path="/categoria/:categoria/detalle/:detalleId" element={<ItemDetailContainer/>}/> */}
           <Route path="/cart" element={<Cart />}/>
           <Route path="/*" element={<Navigate to='/' />} />
         </Routes>
