@@ -26,7 +26,7 @@ function ItemListContainer({ greeting }) {
     <>
       <div className='d-flex justify-content-center'>{greeting}</div>
       { loading ? <h2 className='d-flex justify-content-center'>Cargando...</h2> : 
-      <ItemList prods={prods}/>
+      <div className='d-flex flex-wrap justify-content-start col-10 mx-auto'><ItemList prods={prods}/></div>
       }
     </>
   )
