@@ -21,7 +21,6 @@ function ItemListContainer({ greeting }) {
       .finally( () => setLoading(false))
     }
   }, [categoria])
-  console.log(categoria)
   return (
     <>
       <div className='d-flex justify-content-center'>{greeting}</div>
