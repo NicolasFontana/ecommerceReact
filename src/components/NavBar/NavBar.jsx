@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Widget from './Widget/Widget'
@@ -22,9 +22,9 @@ function NavBar() {
             </Navbar.Brand>
           </NavLink>
           <Search />
-          <Link to='cart'>
+          <NavLink to='cart'>
             <Widget />
-          </Link>
+          </NavLink>
         </Container>
       </Navbar>
 </>
