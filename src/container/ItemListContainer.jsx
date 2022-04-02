@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 import {gFetch} from '../helpers/getFetch'
 import ItemList from '../components/ItemList/ItemList'
 import { useParams } from 'react-router-dom'
+import './ItemListContainer.css'
 
-function ItemListContainer({ greeting }) {
+function ItemListContainer() {
   const [prods, setProds] = useState ([])
   const [ loading, setLoading ] = useState(true)
   const { categoria } = useParams()
@@ -22,12 +23,11 @@ function ItemListContainer({ greeting }) {
     }
   }, [categoria])
   return (
-    <>
-      <div className='d-flex justify-content-center'>{greeting}</div>
+    <div className='containerItems'>
       { loading ? <h2 className='d-flex justify-content-center'>Cargando...</h2> : 
-      <div className='d-flex flex-wrap justify-content-start col-10 mx-auto'><ItemList prods={prods}/></div>
+      <div className='d-flex flex-wrap justify-content-start col-10 mx-auto my-5'><ItemList prods={prods}/></div>
       }
-    </>
+    </div>
   )
 }
 

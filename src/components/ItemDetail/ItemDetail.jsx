@@ -3,17 +3,13 @@ import { useState } from "react"
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
-// const onAdd = (count) => {
-// 	console.log(count);
-// };
 
 function ItemDetail({ producto }) {
-	const [isCant, setIsCant] = useState(false)
-    const {addToCart} = useCartContext()
+		const [isCant, setIsCant] = useState(false)
+    const {addItem} = useCartContext()
     
     const onAdd= (cant) => {
-        console.log(cant)
-		addToCart( { ...producto, stock: cant } )
+				addItem( { ...producto, cant: cant } )
         setIsCant(true)
     }
 
@@ -38,7 +34,7 @@ function ItemDetail({ producto }) {
 							</Link>
 						</>
 					:
-						<ItemCount initial={1} stock={producto.stock} onAdd={onAdd}></ItemCount>
+						<ItemCount initial={1} cant={producto.cant} onAdd={onAdd}></ItemCount>
 					}
 				</div>
 			</div>

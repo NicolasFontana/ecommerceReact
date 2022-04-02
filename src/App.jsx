@@ -16,8 +16,8 @@ function App() {
           <NavBar />
           <Categories />
           <Routes>
-            <Route path="/" element={<ItemListContainer greeting = "e-commerce con React" />}/>
-            <Route path="/categoria/:categoria" element={<ItemListContainer greeting = "e-commerce con React" />}/>
+            <Route path="/" element={<ItemListContainer />}/>
+            <Route path="/categoria/:categoria" element={<ItemListContainer />}/>
             <Route path="/detalle/:detalleId" element={<ItemDetailContainer />}/>
             <Route path="/cart" element={<Cart />}/>
             <Route path="/*" element={<Navigate to='/' />} />
