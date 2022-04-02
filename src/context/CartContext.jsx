@@ -31,12 +31,30 @@ function CartContextProvider({children}) {
         setCartList([...cartList])
     }
 
+    function totalCarrito (cartList) {
+        let precioTotal = 0
+        cartList.forEach(prod => 
+            precioTotal += prod.cant * prod.precio
+            )
+        return precioTotal
+    }
+
+    function cantidadCarrito (cartList) {
+        let contador = 0
+        cartList.forEach(prod => 
+            contador += prod.cant
+            )
+        return contador
+    }
+
     return (
         <CartContext.Provider value={{ 
             cartList,
             addItem,
             vaciarCarrito,
-            removeItem
+            removeItem,
+            totalCarrito,
+            cantidadCarrito
         }}>
             { children }
         </CartContext.Provider>

@@ -1,0 +1,12 @@
+.carrito {
+  color: #5865F2;
+}
+
+.contador {
+  color: #fff;
+  background-color: #5865F2;
+  width: 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}

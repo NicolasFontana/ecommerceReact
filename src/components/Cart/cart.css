@@ -13,7 +13,7 @@ p {
   color: #B02A3A;
 }
 
-.btnVaciar {
+.btnVaciar, .btnComprar, .btnSeguirComprando {
   border: none;
   background-color: #5865F2;
   color: #fff;
@@ -21,22 +21,43 @@ p {
   padding: 7px 16px;
 }
 
-.btnComprar {
-  border: none;
-  background-color: #5865F2;
-  color: #fff;
-  border-radius: 40px;
-  padding: 7px 16px;
+.btnVaciar:hover, .btnComprar:hover, .btnSeguirComprando:hover {
+  background-color: #404EED;
 }
 
 .cardx {
-    background-color: #fff;
-    height: auto;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 1rem auto;
-    border-left: 10px solid #5865F2;
-    box-shadow: 0px 0px 14px 2px rgb(200 200 200 / 69%);
-    -webkit-box-shadow: 0px 0px 14px 2px rgb(200 200 200 / 69%);
-    -moz-box-shadow: 0px 0px 14px 2px rgba(200, 200, 200, 0.69);
+  background-color: #fff;
+  height: auto;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 1rem auto;
+  border-left: 10px solid #5865F2;
+  box-shadow: 0px 0px 14px 2px rgb(200 200 200 / 69%);
+  -webkit-box-shadow: 0px 0px 14px 2px rgb(200 200 200 / 69%);
+  -moz-box-shadow: 0px 0px 14px 2px rgba(200, 200, 200, 0.69);
+}
+
+.cardx:hover {
+  box-shadow: 0px 0px 14px 2px rgb(150 150 150 / 69%);
+  -webkit-box-shadow: 0px 0px 14px 2px rgb(150 150 150 / 69%);
+  -moz-box-shadow: 0px 0px 14px 2px rgba(150, 150, 150, 0.69);
+}
+
+.cardPrecio {
+  background-color: #fff;
+  height: auto;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 1rem auto;
+  border-left: 10px solid #00B0F4;
+  box-shadow: 0px 0px 14px 2px rgb(200 200 200 / 69%);
+  -webkit-box-shadow: 0px 0px 14px 2px rgb(200 200 200 / 69%);
+  -moz-box-shadow: 0px 0px 14px 2px rgba(200, 200, 200, 0.69);
+
+}
+
+.cardPrecio:hover {
+  box-shadow: 0px 0px 14px 2px rgb(150 150 150 / 69%);
+  -webkit-box-shadow: 0px 0px 14px 2px rgb(150 150 150 / 69%);
+  -moz-box-shadow: 0px 0px 14px 2px rgba(150, 150, 150, 0.69);
 }

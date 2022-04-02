@@ -2,6 +2,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
+import './itemDetail.css'
 
 
 function ItemDetail({ producto }) {
@@ -15,7 +16,7 @@ function ItemDetail({ producto }) {
 
 	return (
 		<>
-		<div className="container-fluid col-10">
+		<div className="containerDetail container-fluid col-10">
 			<div className="d-flex justify-content-around mt-5">
 				<div className="me-5">
 					<img src={require(`../../img/${producto.imagen}`)} alt="" />
