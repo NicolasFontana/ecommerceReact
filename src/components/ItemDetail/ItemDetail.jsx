@@ -19,11 +19,11 @@ function ItemDetail({ producto }) {
 		<div className="containerDetail container-fluid col-10">
 			<div className="d-flex justify-content-around mt-5">
 				<div className="me-5">
-					<img src={require(`../../img/${producto.imagen}`)} alt="" />
+					<img src={producto.imagen} alt="" />
 				</div>
 				<div>
 					<p className="fs-2">{producto.nombre}</p>
-					<p className="fs-2 mb-5 text-primary">{producto.precio}</p>
+					<p className="fs-2 mb-5 text-primary">${producto.precio}</p>
 					
 					{isCant ?
 						<>  

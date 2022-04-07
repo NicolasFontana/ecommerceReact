@@ -15,7 +15,7 @@ function Cart() {
             {cartList.map(prod =>
               <div key={prod.id} className="d-flex cardx justify-content-between">
                 <div className="d-flex align-items-center">
-                  <img src={require(`../../img/${prod.imagen}`)} alt="" width={"200"} />
+                  <img src={prod.imagen} alt="" width={"200"} />
                   <p>x{prod.cant} {prod.nombre}</p>
                 </div>
                 <div className="d-flex align-items-center">

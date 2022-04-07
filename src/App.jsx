@@ -7,6 +7,9 @@ import ItemListContainer from './container/ItemListContainer'
 import ItemDetailContainer from './container/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart'
 import CartContextProvider from './context/CartContext';
+import { getFirestoreApp } from './firebase/config'
+
+getFirestoreApp()
 
 function App() {
   return (

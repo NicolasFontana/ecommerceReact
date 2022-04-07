@@ -7,7 +7,7 @@ function Item({prod}) {
     <div className='me-4 mb-4 asd'>
       <Link className='text-decoration-none' to={`/detalle/${prod.id}`}>
         <Card className='cardItem' key={prod.id} style={{ width: '18rem' }}>
-          <Card.Img className='cardItemImg' variant="top" src={require(`../../img/${prod.imagen}`)} />
+          <Card.Img className='cardItemImg' variant="top" src={prod.imagen} />
             <Card.Body>
             <Card.Title className='titleCard truncate'>{prod.nombre}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">${prod.precio}</Card.Subtitle>
