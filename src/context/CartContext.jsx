@@ -47,6 +47,10 @@ function CartContextProvider({children}) {
         return contador
     }
 
+    const precioTotal = () => {
+        return cartList.reduce ((acum, prod) => acum + (prod.cant * prod.precio), 0)
+    }
+
     return (
         <CartContext.Provider value={{ 
             cartList,
@@ -54,7 +58,8 @@ function CartContextProvider({children}) {
             vaciarCarrito,
             removeItem,
             totalCarrito,
-            cantidadCarrito
+            cantidadCarrito,
+            precioTotal
         }}>
             { children }
         </CartContext.Provider>

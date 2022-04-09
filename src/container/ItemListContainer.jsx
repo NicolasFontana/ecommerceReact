@@ -10,19 +10,6 @@ function ItemListContainer() {
   const [ loading, setLoading ] = useState(true)
   const { categoria } = useParams()
 
-  // useEffect( () => {
-  //   if (categoria) {
-  //     gFetch
-  //     .then(rta => setProds(rta.filter(prod => prod.categoria === categoria)))
-  //     .catch(error => console.log(error))
-  //     .finally( () => setLoading(false))
-  //   } else {
-  //     gFetch
-  //     .then(rta => setProds(rta))
-  //     .catch(error => console.log(error))
-  //     .finally( () => setLoading(false))
-  //   }
-  // }, [categoria])
   useEffect( () => {
     const db = getFirestore()
     const queryCollection = collection (db, 'items')

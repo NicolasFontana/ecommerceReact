@@ -1,11 +1,33 @@
 import { useCartContext } from "../../context/CartContext"
 import { Link } from "react-router-dom";
 import './cart.css'
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 
 function Cart() {
 
-  const { cartList, vaciarCarrito, removeItem, totalCarrito } = useCartContext()
+  const { cartList, vaciarCarrito, removeItem, totalCarrito, precioTotal } = useCartContext()
+
+  const generarOrden = async (e) => {
+    e.preventDefault();
+    let orden = {}
+
+    orden.buyer = {name: 'Nico', email: 'nico.fontana12@gmail.com', phone: '123131312'}
+    orden.total = precioTotal()
+
+    orden.items = cartList.map(cartProd => {
+      const id = cartProd.id
+      const nombre = cartProd.nombre
+      const precio = cartProd.precio * cartProd.cant
+      
+      return {id, nombre, precio}
+    })
+
+    const db = getFirestore()
+    const queryCollection = collection(db, 'orders')
+    addDoc(queryCollection, orden)
+    .then (({id}) => alert("Su orden de compra es la siguiente: \n" + id))
+  }
 
   return (
     cartList.length > 0 ?
@@ -37,7 +59,7 @@ function Cart() {
             </div>
             <div className="d-flex justify-content-end">
               <button className="btnVaciar me-2" onClick={vaciarCarrito}>Vaciar carrito</button>
-              <button className="btnComprar">Finalizar compra</button>
+              <button className="btnComprar" onClick={generarOrden}>Finalizar compra</button>
             </div>
           </div>
         </div>
